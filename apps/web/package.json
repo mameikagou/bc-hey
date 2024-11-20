@@ -1,0 +1,35 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@rive-app/canvas": "^2.23.8",
+    "@rive-app/react-canvas": "^4.16.4",
+    "@tamagui/config": "^1.116.15",
+    "@tanstack/react-query": "^5.60.5",
+    "@wagmi/connectors": "^5.4.0",
+    "next": "15.0.3",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "styled-components": "^6.1.13",
+    "tamagui": "^1.116.15",
+    "viem": "2.x",
+    "wagmi": "^2.12.33"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
