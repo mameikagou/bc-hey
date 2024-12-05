@@ -1,9 +1,20 @@
-import Image from 'next/image';
-import CurrencyInputPanel from '@/components/CurrencyInputPanel/index';
-export default function Home() {
+import {
+  GridItemEight,
+  GridItemFour,
+  GridLayout,
+} from '@/components/ui/GridLayout';
+
+export default function Home<NextPage>() {
   return (
     <>
-      <CurrencyInputPanel hideInput/>
+      <GridLayout>
+        <GridItemEight>
+          <div>111</div>
+        </GridItemEight>
+        <GridItemFour>
+          <div>222</div>
+        </GridItemFour>
+      </GridLayout>
     </>
   );
 }

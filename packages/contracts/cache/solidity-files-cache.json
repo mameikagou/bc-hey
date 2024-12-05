@@ -1,0 +1,228 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/mrlonely/mrlonely/mrlonely-code/gitclone/bc-hey/packages/contracts/contracts/Lock.sol": {
+      "lastModificationDate": 1731724345264,
+      "contentHash": "101c00cb43bd6d4be9704e08c973d5ad",
+      "sourceName": "contracts/Lock.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.27"
+      ],
+      "artifacts": [
+        "Lock"
+      ]
+    },
+    "/Users/mrlonely/mrlonely/mrlonely-code/gitclone/bc-hey/packages/contracts/contracts/Swap.sol": {
+      "lastModificationDate": 1731740672232,
+      "contentHash": "616051186184acd2362fff56fc5232b0",
+      "sourceName": "contracts/Swap.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
+        "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol"
+      ],
+      "versionPragmas": [
+        "0.8.27"
+      ],
+      "artifacts": [
+        "SimpleSwap"
+      ]
+    },
+    "/Users/mrlonely/mrlonely/mrlonely-code/gitclone/bc-hey/node_modules/.pnpm/@uniswap+v3-periphery@1.4.4/node_modules/@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol": {
+      "lastModificationDate": 1731740321125,
+      "contentHash": "ffd42687b3db01d30c24213d961fcf9f",
+      "sourceName": "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "ISwapRouter"
+      ]
+    },
+    "/Users/mrlonely/mrlonely/mrlonely-code/gitclone/bc-hey/node_modules/.pnpm/@uniswap+v3-periphery@1.4.4/node_modules/@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol": {
+      "lastModificationDate": 1731740321131,
+      "contentHash": "f0616d1842da6584f8454c9b323d777f",
+      "sourceName": "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "TransferHelper"
+      ]
+    },
+    "/Users/mrlonely/mrlonely/mrlonely-code/gitclone/bc-hey/node_modules/.pnpm/@uniswap+v3-core@1.0.1/node_modules/@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol": {
+      "lastModificationDate": 1731740321127,
+      "contentHash": "a8ba2d37b0107911ae0e3b0e123cbd83",
+      "sourceName": "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV3SwapCallback"
+      ]
+    },
+    "/Users/mrlonely/mrlonely/mrlonely-code/gitclone/bc-hey/node_modules/.pnpm/@openzeppelin+contracts@5.1.0/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1731724409803,
+      "contentHash": "8f19f64d2adadf448840908bbaf431c8",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    }
+  }
+}
