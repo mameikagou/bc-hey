@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useMemo, useRef } from 'react';
 
 interface SwapFormState {}

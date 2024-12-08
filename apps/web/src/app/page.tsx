@@ -1,20 +1,23 @@
+import SideBar from '@/components/Home/SideBar';
 import {
-  GridItemEight,
-  GridItemFour,
-  GridLayout,
+	GridItemEight,
+	GridItemFour,
+	GridLayout,
 } from '@/components/ui/GridLayout';
+import { NextPage } from 'next';
 
-export default function Home<NextPage>() {
-  return (
-    <>
-      <GridLayout>
-        <GridItemEight>
-          <div>111</div>
-        </GridItemEight>
-        <GridItemFour>
-          <div>222</div>
-        </GridItemFour>
-      </GridLayout>
-    </>
-  );
-}
+const Home: NextPage = () => {
+	return (
+		<>
+			<GridLayout>
+				<GridItemEight>
+					<div>111</div>
+				</GridItemEight>
+				<GridItemFour>
+					<SideBar />
+				</GridItemFour>
+			</GridLayout>
+		</>
+	);
+};
+export default Home;

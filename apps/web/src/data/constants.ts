@@ -1,0 +1,1 @@
+export const HEY_API_URL = "https://api.hey.xyz"
