@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@bc-hey/db": "workspace:*",
     "@rive-app/canvas": "^2.23.8",
     "@rive-app/react-canvas": "^4.16.4",
     "@tamagui/config": "^1.116.15",

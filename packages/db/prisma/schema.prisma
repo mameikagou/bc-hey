@@ -1,0 +1,181 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Preference {
+  id                           String   @id
+  appIcon                      Int?     @default(0)
+  highSignalNotificationFilter Boolean  @default(false)
+  developerMode                Boolean  @default(false)
+  createdAt                    DateTime @default(now())
+}
+
+model Email {
+  id                String    @id
+  email             String    @unique
+  verified          Boolean   @default(false)
+  verificationToken String?   @unique
+  tokenExpiresAt    DateTime?
+  createdAt         DateTime  @default(now())
+}
+
+model MembershipNft {
+  id                String   @id
+  dismissedOrMinted Boolean  @default(false)
+  createdAt         DateTime @default(now())
+}
+
+model Poll {
+  id        String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt DateTime  @default(now())
+  endsAt    DateTime?
+
+  // Relations
+  options PollOption[]
+}
+
+model PollOption {
+  id     String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  option String
+  index  Int    @default(0)
+
+  // Relations
+  pollId    String         @db.Uuid
+  poll      Poll           @relation(fields: [pollId], references: [id], onDelete: Cascade)
+  responses PollResponse[]
+
+  // Indexes
+  @@index([pollId])
+}
+
+model PollResponse {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  profileId String
+  optionId  String   @db.Uuid
+  createdAt DateTime @default(now())
+
+  // Relations
+  option PollOption @relation(fields: [optionId], references: [id], onDelete: Cascade)
+
+  // Constraints
+  @@unique([profileId, optionId])
+  // Indexes
+  @@index([optionId])
+}
+
+model AllowedToken {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name            String
+  symbol          String
+  decimals        Int      @default(18)
+  contractAddress String   @unique
+  priority        Int      @default(0)
+  createdAt       DateTime @default(now())
+
+  // Indexes
+  @@index([priority])
+}
+
+model Tip {
+  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  publicationId String
+  fromProfileId String
+  fromAddress   String
+  toProfileId   String
+  toAddress     String
+  tokenAddress  String
+  amount        Int
+  txHash        String
+  createdAt     DateTime @default(now())
+}
+
+model Permission {
+  id        String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  key       String         @unique
+  type      PermissionType @default(PERMISSION)
+  createdAt DateTime       @default(now())
+
+  // Relations
+  profiles ProfilePermission[]
+
+  // Indexes
+  @@index([type])
+}
+
+enum PermissionType {
+  PERMISSION
+  COHORT
+}
+
+model ProfilePermission {
+  profileId    String
+  permissionId String     @db.Uuid
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+  enabled      Boolean    @default(true)
+  createdAt    DateTime   @default(now())
+
+  @@id([profileId, permissionId])
+  // Indexes
+  @@index([profileId])
+  @@index([permissionId])
+}
+
+model ProfileStatus {
+  id        String   @id
+  message   String
+  emoji     String
+  createdAt DateTime @default(now())
+}
+
+model ProfileTheme {
+  id        String   @id
+  fontStyle String?
+  createdAt DateTime @default(now())
+}
+
+model List {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String
+  description String?
+  avatar      String?
+  createdBy   String
+  createdAt   DateTime @default(now())
+
+  // Relations
+  profiles   ListProfile[]
+  pinnedList PinnedList[]
+}
+
+model ListProfile {
+  profileId String
+  listId    String   @db.Uuid
+  list      List     @relation(fields: [listId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@id([profileId, listId])
+}
+
+model PinnedList {
+  profileId String
+  listId    String   @db.Uuid
+  list      List     @relation(fields: [listId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@id([profileId, listId])
+}
+
+model MutedWord {
+  id        String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  profileId String
+  word      String
+  expiresAt DateTime?
+  createdAt DateTime  @default(now())
+
+  // Indexes
+  @@index([profileId])
+}
