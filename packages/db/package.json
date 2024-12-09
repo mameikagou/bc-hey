@@ -2,7 +2,6 @@
   "name": "@bc-hey/db",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "^6.0.1"
+    "@prisma/client": "^6.0.1",
+    "redis": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20"
   }
 }

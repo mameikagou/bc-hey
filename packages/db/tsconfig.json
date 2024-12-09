@@ -1,11 +1,20 @@
 {
-    "extends": "@bc-hey/config/base.tsconfig.json",
     "compilerOptions": {
-      "module": "commonjs",
-      "noEmit": false,
-      "outDir": "dist",
-      "baseUrl": "."
-    },
-    "include": ["**/*.ts"]
-  }
-  
+        "target": "es2017",
+        "module": "NodeNext",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "types": [
+            "node"
+        ],
+        "moduleResolution": "nodenext",
+        "baseUrl": ".",
+        "paths": {
+            "redis": [
+                "node_modules/redis"
+            ]
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-
+// import {process} from '@types/node'
 const prismaClientSingleton = () => {
   return new PrismaClient();
 };
