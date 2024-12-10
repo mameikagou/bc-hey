@@ -9,7 +9,7 @@ import Providers from '@/components/Common/index'
 import { QueryClient } from '@tanstack/react-query';
 // you usually export this from a tamagui.config.ts file
 const tamaguiConfig = createTamagui(config);
-
+import "@arco-design/web-react/dist/css/arco.css";
 // TypeScript types across all Tamagui APIs
 type Conf = typeof tamaguiConfig;
 declare module 'tamagui' {
