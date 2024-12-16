@@ -47,6 +47,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      ethers:
+        specifier: 5.7.2
+        version: 5.7.2(bufferutil@4.0.8)(utf-8-validate@5.0.10)
       next:
         specifier: 15.0.3
         version: 15.0.3(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -56,9 +59,15 @@ importers:
       react-dom:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
+      react-jazzicon:
+        specifier: ^1.0.4
+        version: 1.0.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-native-web:
         specifier: ^0.19.13
         version: 0.19.13(encoding@0.1.13)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-tracked:
+        specifier: ^2.0.1
+        version: 2.0.1(react@19.0.0)(scheduler@0.25.0)
       styled-components:
         specifier: ^6.1.13
         version: 6.1.13(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -74,6 +83,9 @@ importers:
       wagmi:
         specifier: ^2.12.33
         version: 2.12.33(@tanstack/query-core@5.60.5)(@tanstack/react-query@5.60.5(react@19.0.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(immer@10.0.2)(react-dom@19.0.0(react@19.0.0))(react-native@0.76.2(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0)(utf-8-validate@5.0.10))(react@19.0.0)(typescript@5.6.3)(utf-8-validate@5.0.10)(viem@2.21.45(bufferutil@4.0.8)(typescript@5.6.3)(utf-8-validate@5.0.10))
+      zustand:
+        specifier: ^5.0.2
+        version: 5.0.2(@types/react@18.3.12)(immer@10.0.2)(react@19.0.0)(use-sync-external-store@1.2.0(react@19.0.0))
     devDependencies:
       '@types/node':
         specifier: ^20
@@ -5916,6 +5928,9 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
+  mersenne-twister@1.1.0:
+    resolution: {integrity: sha512-mUYWsMKNrm4lfygPkL3OfGzOPTR2DBlTkBNHM//F6hGp8cLThY897crAlk3/Jo17LEOOjQUrNAx6DvgO77QJkA==}
+
   metro-babel-transformer@0.81.0:
     resolution: {integrity: sha512-Dc0QWK4wZIeHnyZ3sevWGTnnSkIDDn/SWyfrn99zbKbDOCoCYy71PAn9uCRrP/hduKLJQOy+tebd63Rr9D8tXg==}
     engines: {node: '>=18.18'}
@@ -6791,6 +6806,9 @@ packages:
   proxy-compare@2.5.1:
     resolution: {integrity: sha512-oyfc0Tx87Cpwva5ZXezSp5V9vht1c7dZBhvuV/y3ctkgMVUmiAGDVeeB0dKhGSyT0v1ZTEQYpe/RXlBVBNuCLA==}
 
+  proxy-compare@3.0.1:
+    resolution: {integrity: sha512-V9plBAt3qjMlS1+nC8771KNf6oJ12gExvaxnNzN/9yVRLdTv/lc+oJlnSzrdYDAvBfTStPCoiaCOTmTs0adv7Q==}
+
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
@@ -6886,6 +6904,12 @@ packages:
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
+  react-jazzicon@1.0.4:
+    resolution: {integrity: sha512-/3kWv5vtAhI18GBFoqjpxRTtL+EImuB73PAC02r/zJQ6E+PAUmoBx8edYvTCIYHwS01uFf6N3elTDqSrVPwg4w==}
+    peerDependencies:
+      react: '>=17.0.0'
+      react-dom: '>=17.0.0'
+
   react-native-reanimated@3.16.1:
     resolution: {integrity: sha512-Wnbo7toHZ6kPLAD8JWKoKCTfNoqYOMW5vUEP76Rr4RBmJCrdXj6oauYP0aZnZq8NCbiP5bwwu7+RECcWtoetnQ==}
     peerDependencies:
@@ -6949,6 +6973,12 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
+
+  react-tracked@2.0.1:
+    resolution: {integrity: sha512-qjbmtkO2IcW+rB2cFskRWDTjKs/w9poxvNnduacjQA04LWxOoLy9J8WfIEq1ahifQ/tVJQECrQPBm+UEzKRDtg==}
+    peerDependencies:
+      react: '>=18.0.0'
+      scheduler: '>=0.19.0'
 
   react-transition-group@4.4.5:
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
@@ -8019,6 +8049,12 @@ packages:
       '@types/react':
         optional: true
 
+  use-context-selector@2.0.0:
+    resolution: {integrity: sha512-owfuSmUNd3eNp3J9CdDl0kMgfidV+MkDvHPpvthN5ThqM+ibMccNE0k+Iq7TWC6JPFvGZqanqiGCuQx6DyV24g==}
+    peerDependencies:
+      react: '>=18.0.0'
+      scheduler: '>=0.19.0'
+
   use-sidecar@1.1.2:
     resolution: {integrity: sha512-epTbsLuzZ7lPClpz2TyryBfztm7m+28DlEv2ZCQ3MDr5ssiwyOwGH/e5F9CkfWjJ1t4clvI58yF822/GUkjjhw==}
     engines: {node: '>=10'}
@@ -8345,6 +8381,24 @@ packages:
 
   zustand@5.0.0:
     resolution: {integrity: sha512-LE+VcmbartOPM+auOjCCLQOsQ05zUTp8RkgwRzefUk+2jISdMMFnxvyTjA4YNWr5ZGXYbVsEMZosttuxUBkojQ==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
+
+  zustand@5.0.2:
+    resolution: {integrity: sha512-8qNdnJVJlHlrKXi50LDqqUNmUbuBjoKLrYQBnoChIbVph7vni+sY+YpvdjXG9YLd/Bxr6scMcR+rm5H3aSqPaw==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=18.0.0'
@@ -16266,6 +16320,8 @@ snapshots:
 
   merge2@1.4.1: {}
 
+  mersenne-twister@1.1.0: {}
+
   metro-babel-transformer@0.81.0:
     dependencies:
       '@babel/core': 7.26.0
@@ -17346,6 +17402,8 @@ snapshots:
 
   proxy-compare@2.5.1: {}
 
+  proxy-compare@3.0.1: {}
+
   proxy-from-env@1.1.0: {}
 
   pump@3.0.2:
@@ -17443,6 +17501,12 @@ snapshots:
   react-is@16.13.1: {}
 
   react-is@18.3.1: {}
+
+  react-jazzicon@1.0.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      mersenne-twister: 1.1.0
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   react-native-reanimated@3.16.1(@babel/core@7.26.0)(react-native@0.76.2(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.12)(bufferutil@4.0.8)(encoding@0.1.13)(react@19.0.0)(utf-8-validate@5.0.10))(react@19.0.0):
     dependencies:
@@ -17566,6 +17630,13 @@ snapshots:
       tslib: 2.8.1
     optionalDependencies:
       '@types/react': 18.3.12
+
+  react-tracked@2.0.1(react@19.0.0)(scheduler@0.25.0):
+    dependencies:
+      proxy-compare: 3.0.1
+      react: 19.0.0
+      scheduler: 0.25.0
+      use-context-selector: 2.0.0(react@19.0.0)(scheduler@0.25.0)
 
   react-transition-group@4.4.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
@@ -18834,6 +18905,11 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.12
 
+  use-context-selector@2.0.0(react@19.0.0)(scheduler@0.25.0):
+    dependencies:
+      react: 19.0.0
+      scheduler: 0.25.0
+
   use-sidecar@1.1.2(@types/react@18.3.12)(react@19.0.0):
     dependencies:
       detect-node-es: 1.1.0
@@ -19197,6 +19273,13 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   zustand@5.0.0(@types/react@18.3.12)(immer@10.0.2)(react@19.0.0)(use-sync-external-store@1.2.0(react@19.0.0)):
+    optionalDependencies:
+      '@types/react': 18.3.12
+      immer: 10.0.2
+      react: 19.0.0
+      use-sync-external-store: 1.2.0(react@19.0.0)
+
+  zustand@5.0.2(@types/react@18.3.12)(immer@10.0.2)(react@19.0.0)(use-sync-external-store@1.2.0(react@19.0.0)):
     optionalDependencies:
       '@types/react': 18.3.12
       immer: 10.0.2

@@ -19,7 +19,7 @@ export const GridLayout: FC<GridProps> = ({
         className
       )}
     >
-      <div className={cn('grid grid-cols-11 lg:gap-8', classNameChild)}>
+      <div className={cn('grid grid-cols-12 lg:gap-8', classNameChild)}>
         {children}
       </div>
     </div>
@@ -28,7 +28,7 @@ export const GridLayout: FC<GridProps> = ({
 export const GridItemFour: FC<GridProps> = ({ children, className = '' }) => {
   return (
     // span 4 / span 4 表示跨越4列
-    <div className={cn('col-span-11 md:col-span-11 lg:col-span-4', className)}>
+    <div className={cn('col-span-12 md:col-span-12 lg:col-span-4', className)}>
       {children}
     </div>
   );
@@ -37,7 +37,7 @@ export const GridItemFour: FC<GridProps> = ({ children, className = '' }) => {
 export const GridItemEight: FC<GridProps> = ({ children, className = '' }) => {
   return (
     <div
-      className={cn('col-span-11 mb-5 md:col-span-11 lg:col-span-7', className)}
+      className={cn('col-span-12 mb-5 md:col-span-12 lg:col-span-7', className)}
     >
       {children}
     </div>

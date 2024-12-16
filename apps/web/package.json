@@ -18,15 +18,19 @@
     "@wagmi/connectors": "^5.4.0",
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
+    "ethers": "5.7.2",
     "next": "15.0.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "react-jazzicon": "^1.0.4",
     "react-native-web": "^0.19.13",
+    "react-tracked": "^2.0.1",
     "styled-components": "^6.1.13",
     "tailwind-merge": "^2.5.5",
     "tamagui": "^1.116.15",
     "viem": "~2.21.45",
-    "wagmi": "^2.12.33"
+    "wagmi": "^2.12.33",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",
