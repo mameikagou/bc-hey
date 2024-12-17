@@ -10,7 +10,8 @@ import AvatarComponent from "@/components/Profile/Avatar";
 import connectMetaMask from "@/utils/connect";
 import { useEffect } from "react";
 import MetaMaskComponent from "@/utils/MetaMaskComponent";
-import Swap from "@/components/Swap/Swap";
+import Swap from "@/components/Swap";
+import Distribute from "@/components/Distribute";
 
 const Home: NextPage = () => {
 	return (
@@ -22,7 +23,8 @@ const Home: NextPage = () => {
 				</GridItemFour>
 				<GridItemEight>
 					{/* <SideBar /> */}
-					<Swap></Swap>
+					<Swap />
+					<Distribute />
 				</GridItemEight>
 			</GridLayout>
 		</>

@@ -11,6 +11,7 @@
   "dependencies": {
     "@arco-design/web-react": "^2.65.0",
     "@bc-hey/db": "workspace:*",
+    "@dnd-kit/core": "^6.3.1",
     "@rive-app/canvas": "^2.23.8",
     "@rive-app/react-canvas": "^4.16.4",
     "@tamagui/config": "^1.116.15",
