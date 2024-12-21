@@ -11,6 +11,8 @@
   "description": "",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "chai": "^5.1.2",
+    "ethers": "^6.13.4",
     "hardhat": "^2.22.17"
   },
   "dependencies": {
