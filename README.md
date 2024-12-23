@@ -1,4 +1,4 @@
-# Web3 浏览器插件
+# Web3 项目
 
 > Professional README documentation to facilitate future collaboration and make it easier for contributors to participate in the project.
 
@@ -7,7 +7,8 @@
 
 ## 📖 项目概述
 
-一个使用 Turborepo monorepo 管理和 Hardhat 开发环境构建的区块链 Web3 浏览器插件。该插件提供 Web3 功能，让用户可以直接从浏览器与区块链网络交互。
+一个使用 Turborepo monorepo 管理和 Hardhat 开发环境构建的区块链 Web3 项目， 目前包含了web端和浏览器插件端。
+其提供 Web3 功能，让用户可以直接从浏览器与区块链网络交互。
 
 ### 🔑 核心特性
 
@@ -20,17 +21,20 @@
 
 ```
 project-root/
-├── apps/                # 应用程序包
-│   └── extension/       # 浏览器插件
-├── packages/            # 共享包
-├── contracts/           # 智能合约
-└── turbo.json          # Turborepo 配置
+├── apps/                      # 应用程序包
+│   ├── web/                   # Web 应用
+│   └── extension/            # 浏览器插件
+├── packages/                  # 共享包
+│   └── db/                   # 数据库相关
+│   └── contracts/              # 智能合约
+├── package.json             # 根目录配置
+└── turbo.json              # Turborepo 配置
 ```
 
 ## ⚙️ 环境要求
 
-- Node.js (>=16.x)
-- npm, yarn, 或 pnpm
+- Node.js lts/hydrogen(v18.20.5)
+- pnpm
 - Git
 
 ## 🚀 快速开始
@@ -42,13 +46,15 @@ cd [项目名]
 ```
 
 2. 安装依赖:
+在项目根目录下
 ```bash
-npm install
+pnpm install
 ```
 
-3. 构建项目:
+3. 构建extension项目
+根目录下：
 ```bash
-npm run build
+pnpm extension build
 ```
 
 ## 💻 开发指南
@@ -111,15 +117,6 @@ git push origin feature/your-feature-name
 - 保证所有测试通过
 - 通过 lint 检查
 
-## 📝 可用脚本
-
-```bash
-npm run build    # 构建所有包
-npm run test     # 运行测试
-npm run lint     # 代码检查
-npm run format   # 代码格式化
-```
-
 ## 🛠️ 技术栈
 
 - [Turborepo](https://turbo.build/repo) - Monorepo 管理工具
@@ -134,7 +131,6 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 ## 📞 联系方式
 
 - Issue 提交: [GitHub Issues](https://github.com/username/repo/issues)
-- 邮箱: [your-email@example.com](mailto:your-email@example.com)
 
 ---
 
