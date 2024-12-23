@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "bc-hey-extension",
+    "version": "1.0",
+    "description": "A simple browser extension",
+    "action": {
+      "default_popup": "./popup.html"
+    },
+    "permissions": [
+      "alarms",
+      "notifications",
+      "sidePanel",
+      "storage",
+      "tabs"
+    ]
+  }

@@ -4,6 +4,7 @@
   "private": true,
   "license": "AGPL-3.0",
   "scripts": {
+    "extension": "pnpm --filter @bc/extension",
     "biome:check": "biome check .",
     "biome:fix": "biome check --write .",
     "build": "pnpm --recursive --parallel run build",

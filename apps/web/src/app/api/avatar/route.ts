@@ -5,7 +5,6 @@ import getRpc from '../helpers/rpc';
 
 // @ts-ignore
 import { getRedis } from "@bc-hey/db/redisClient.mts";
-import { error } from 'console';
 export async function GET(req: Request, res: Response) {
     const { searchParams } = new URL(req.url)
     const id = searchParams.get('id')
