@@ -2,7 +2,7 @@ const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
 describe("RewardDistribution Contract", function () {
-  let RewardDistribution, rewardDistribution, RewardToken, rewardToken;
+  let RewardDistribution, rewardDistribution, MockERC20, rewardToken;
   let admin, user1, user2;
 
   beforeEach(async function () {
@@ -10,8 +10,8 @@ describe("RewardDistribution Contract", function () {
     [admin, user1, user2] = await ethers.getSigners();
 
     // 部署 MockERC20 合约
-    const RewardToken = await ethers.getContractFactory("MockERC20");
-    rewardToken = await RewardToken.deploy(
+    MockERC20 = await ethers.getContractFactory("MockERC20");
+    rewardToken = await MockERC20.deploy(
       "RewardToken", // name
       "RWT",         // symbol
       18,            // decimals
@@ -20,7 +20,7 @@ describe("RewardDistribution Contract", function () {
     await rewardToken.deployed();
 
     // 部署 RewardDistribution 合约
-    const RewardDistribution = await ethers.getContractFactory("RewardDistribution");
+    RewardDistribution = await ethers.getContractFactory("RewardDistribution");
     rewardDistribution = await RewardDistribution.deploy(rewardToken.address);
     await rewardDistribution.deployed();
 
@@ -30,6 +30,16 @@ describe("RewardDistribution Contract", function () {
 
   it("should allocate rewards correctly", async function () {
     await rewardDistribution.allocateReward(user1.address, ethers.utils.parseEther("100"));
-    expect(await rewardDistribution.getUserReward(user1.address)).to.equal(ethers.utils.parseEther("100"));
+    const reward = await rewardDistribution.getUserReward(user1.address);
+    expect(reward).to.equal(ethers.utils.parseEther("100"));
+  });
+
+  it("should allow users to claim rewards", async function () {
+    await rewardDistribution.allocateReward(user1.address, ethers.utils.parseEther("100"));
+    await rewardDistribution.connect(user1).claimReward();
+    const reward = await rewardDistribution.getUserReward(user1.address);
+    expect(reward).to.equal(ethers.utils.parseEther("0")); 
+    const userBalance = await rewardToken.balanceOf(user1.address);
+    expect(userBalance).to.equal(ethers.utils.parseEther("100"));
   });
 });
