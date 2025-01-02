@@ -54,3 +54,13 @@ module.exports = {
         }),
     ],
 };
+
+// loader 
+// 1. 处理文件的转换压缩分割合并，比如css，图片，tsx，ts等
+
+
+// 插件plugin
+// 可以在webpack的全过程都有用
+// 1. copy-webpack-plugin 复制文件
+// 2. swc-loader 编译tsx文件
+// 3. html-webpack-plugin 生成html文件
