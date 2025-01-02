@@ -1,0 +1,29 @@
+{
+  "name": "@bc-hey/contracts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx hardhat node",
+    "start": "npm run clean && npm run compile && npm run deploy",
+    "full": "npm run clean && npm run compile && concurrently \"npm run dev\" \"wait-on tcp:8545 && npm run deploy\"",
+    "clean": "npx hardhat clean",
+    "compile": "npx hardhat compile",
+    "deploy": "npx hardhat run scripts/deploy.js",
+    "interact": "npx hardhat run scripts/interact.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^8.0.0",
+    "wait-on": "^7.0.1",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "chai": "^4.3.7",
+    "ethers": "^6.7.0",
+    "hardhat": "^2.22.17"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.1.0"
+  }
+}

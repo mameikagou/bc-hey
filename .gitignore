@@ -42,7 +42,9 @@ sw.js
 # Node build artifacts
 dist
 
-
+# hardhat
 artifacts
+cache
+deployedAddresses.json
 
 .vscode
