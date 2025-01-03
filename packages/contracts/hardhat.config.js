@@ -3,7 +3,7 @@ require("dotenv").config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.28",
+  solidity: "0.8.20", // 注意版本要与contracts中一致
   paths: {
     sources: "./contracts",
     tests: "./test",

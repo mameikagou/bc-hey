@@ -1,6 +1,8 @@
 import { DndContext, useDraggable, useDroppable } from "@dnd-kit/core";
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState, useEffect } from "react";
 import { Form, Input, Modal } from "@arco-design/web-react";
+import { ethers } from 'ethers';
+import { ContractUtils } from '@bc-hey/contracts';
 
 function DroppableArea({ id, content }) {
     const { isOver, setNodeRef } = useDroppable({
@@ -26,14 +28,27 @@ export default function Distribute() {
     const [form] = Form.useForm();
     const draggableElement = useRef<HTMLDivElement | null>(null);
     const [distributeId, setDistributeId] = useState<number>();
+    const [contractUtils, setContractUtils] = useState<ContractUtils>();
 
     const [items, setItems] = useState([
         { id: 1, name: "tom", address: null },
         { id: 2, name: "jerry", address: null },
         { id: 3, name: "jack", address: null },
     ]);
+
     const [modalVisible, setModalVisible] = useState(false);
     const deployedToken = Form.useWatch("deployedToken", form);
+
+    useEffect(() => {
+        const init = async () => {
+            if (typeof window.ethereum !== 'undefined') {
+                const utils = new ContractUtils();
+                await utils.connectWallet();
+                setContractUtils(utils);
+            }
+        };
+        init();
+    }, []);
 
     function DraggableItem({ resetTransform }) {
         const { attributes, listeners, setNodeRef, transform } = useDraggable({
@@ -65,13 +80,29 @@ export default function Distribute() {
         );
     }
 
-    const handleDragEnd = (event) => {
+    const handleDragEnd = async (event) => {
         const { active, over } = event;
         if (over && over.id) {
             console.log(`Dragged ${active.id} to ${over.id}`);
             // 在这里处理拖放结束事件，例如更新状态或执行其他操作
             setModalVisible(true);
             setDistributeId(over.id);
+        }
+        
+        if (over) {
+            const userId = over.id;
+            const user = items.find(u => u.id === userId);
+            if (user && contractUtils) {
+                try {
+                    await contractUtils.allocateReward(
+                        user.address, 
+                        ethers.parseEther("100")
+                    );
+                    console.log(`Allocated to user ${userId}`);
+                } catch (error) {
+                    console.error("Error:", error);
+                }
+            }
         }
         resetTransform();
     };
