@@ -8,7 +8,8 @@
     "full": "npm run clean && npm run compile && concurrently \"npm run dev\" \"wait-on tcp:8545 && npm run deploy\"",
     "clean": "npx hardhat clean",
     "compile": "npx hardhat compile",
-    "deploy": "npx hardhat run scripts/deploy.js",
+    "d-local": "npx hardhat run scripts/deploy.js",
+    "d-sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
     "interact": "npx hardhat run scripts/interact.js"
   },
   "keywords": [],
@@ -16,12 +17,13 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "concurrently": "^8.0.0",
-    "wait-on": "^7.0.1",
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "chai": "^4.3.7",
+    "concurrently": "^8.0.0",
+    "dotenv": "^16.4.7",
     "ethers": "^6.7.0",
-    "hardhat": "^2.22.17"
+    "hardhat": "^2.22.17",
+    "wait-on": "^7.0.1"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.1.0"

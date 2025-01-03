@@ -170,6 +170,34 @@ importers:
         specifier: ^7.0.1
         version: 7.2.0
 
+  packages/contracts:
+    dependencies:
+      '@openzeppelin/contracts':
+        specifier: ^5.1.0
+        version: 5.1.0
+    devDependencies:
+      '@nomicfoundation/hardhat-toolbox':
+        specifier: ^5.0.0
+        version: 5.0.0(33zlyi6zcousz6aarbrfwsiyfa)
+      chai:
+        specifier: ^4.3.7
+        version: 4.5.0
+      concurrently:
+        specifier: ^8.0.0
+        version: 8.2.2
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
+      ethers:
+        specifier: ^6.7.0
+        version: 6.13.4(bufferutil@4.0.8)(utf-8-validate@5.0.10)
+      hardhat:
+        specifier: ^2.22.17
+        version: 2.22.17(bufferutil@4.0.8)(ts-node@10.9.2(@swc/core@1.10.1(@swc/helpers@0.5.13))(@types/node@22.9.0)(typescript@5.7.2))(typescript@5.7.2)(utf-8-validate@5.0.10)
+      wait-on:
+        specifier: ^7.0.1
+        version: 7.2.0
+
   packages/db:
     dependencies:
       '@prisma/client':
@@ -4364,6 +4392,10 @@ packages:
 
   dotenv@16.4.5:
     resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
+
+  dotenv@16.4.7:
+    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
     engines: {node: '>=12'}
 
   duplexer@0.1.2:
@@ -14387,6 +14419,8 @@ snapshots:
       dotenv: 16.4.5
 
   dotenv@16.4.5: {}
+
+  dotenv@16.4.7: {}
 
   duplexer@0.1.2: {}
 
