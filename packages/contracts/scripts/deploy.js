@@ -1,8 +1,10 @@
 async function main() {
     try {
-        // 只获取部署账户
-        const [deployer] = await ethers.getSigners();
+        // 获取部署账户和其他测试账户
+        const [deployer, user1, user2] = await ethers.getSigners();
         console.log("Deployer address:", await deployer.getAddress());
+        console.log("User1 address:", await user1.getAddress());
+        console.log("User2 address:", await user2.getAddress());
 
         // 部署 MockERC20
         const MockToken = await ethers.getContractFactory("MockERC20");
@@ -24,12 +26,14 @@ async function main() {
         const rewardAddress = await rewardDistribution.getAddress();
         console.log("RewardDistribution deployed to:", rewardAddress);
 
-        // 将合约地址保存到文件中
+        // 将合约地址保存到文件中，方便后续使用
         const fs = require('fs');
         const addresses = {
             tokenAddress: tokenAddress,
             rewardDistributionAddress: rewardAddress,
-            deployer: await deployer.getAddress()
+            deployer: await deployer.getAddress(),
+            user1: await user1.getAddress(),
+            user2: await user2.getAddress()
         };
 
         fs.writeFileSync(

@@ -6,7 +6,7 @@ Try running some of the following tasks:
 
 ```shell
 1, 手动
-npm run dev #启动hardhat服务器
+npm run node #启动hardhat服务器
 npm run start #编译
 npm run deploy #部署
 
