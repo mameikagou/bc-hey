@@ -1,3 +1,12 @@
+
+
+
+prettier和eslint的使用：
+
+<https://juejin.cn/post/6909788084666105864>
+
+后续计划是，添加注释：
+```json
 {
   "plugins": ["prettier"],
   "extends": [
@@ -7,3 +16,4 @@
     "plugin:@typescript-eslint/eslint-recommended"
   ]
 }
+```
